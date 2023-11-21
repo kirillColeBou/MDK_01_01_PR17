@@ -20,9 +20,24 @@ namespace Pizza_Тепляков
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string LocalPath;
+
         public MainWindow()
         {
+            LocalPath = System.IO.Directory.GetCurrentDirectory();
             InitializeComponent();
+            OpenPages(pages.main);
+        }
+
+        public enum pages
+        {
+            main
+        }
+
+        public void OpenPages(pages _pages)
+        {
+            if (_pages == pages.main)
+                frame.Navigate(new Pages.main(this));
         }
     }
 }
