@@ -9,34 +9,34 @@ namespace Pizza_Тепляков.Classes
 {
     public class Dish
     {
-        public uint id;
+        public int id;
         public string name;
         public List<Sizes> sizes = new List<Sizes>();
         public string img;
         public List<Ingredient> ingredients = new List<Ingredient>();
         public string description;
 
-        public uint activeSize = 0;
+        public int activeSize = 0;
 
         public class Sizes
         {
-            public uint id;
-            public uint id_size;
-            public uint size;
-            public uint price;
-            public uint weight;
-            public uint countOrder;
+            public int id;
+            public int id_size;
+            public int size;
+            public int price;
+            public int weight;
+            public int countOrder;
             public bool orders;
         }
 
         public class Ingredient
         {
-            public uint id;
+            public int id;
             public string name;
-            public uint weight;
-            public uint price;
+            public int weight;
+            public int price;
             public string img;
-            public uint count;
+            public int count;
         }
     }
 }
