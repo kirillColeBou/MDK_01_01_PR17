@@ -23,9 +23,45 @@ namespace Pizza_Тепляков.Pages
     /// </summary>
     public partial class main : Page
     {
-        public main()
+        public MainWindow mainWindow;
+        public List<Dish> dishs = new List<Dish>();
+        public main(MainWindow _mainWindow)
         {
             InitializeComponent();
+            mainWindow = _mainWindow;
+            Dish newDish = new Dish();
+            newDish.img = "img-1";
+            newDish.name = "Сливочная";
+            newDish.description = "Пицца - итальянское национальное блюдо в виде круглой открытой дрожжевой лепешки";
+            Dish.Ingredient newIngredient = new Dish.Ingredient();
+            newIngredient.name = "соус 'Кунжутный'";
+            newDish.ingredients.Add(newIngredient);
+            newIngredient = new Dish.Ingredient();
+            newIngredient.name = "сыр 'Моцарелла'";
+            newDish.ingredients.Add(newIngredient);
+            newIngredient = new Dish.Ingredient();
+            newIngredient.name = "сыр 'Моцарелла' мягкий";
+            newDish.ingredients.Add(newIngredient);
+            newIngredient = new Dish.Ingredient();
+            newIngredient.name = "Помидоры";
+            newDish.ingredients.Add(newIngredient);
+            Dish.Sizes newSize = new Dish.Sizes();
+            newSize.size = 23;
+            newSize.price = 380;
+            newSize.weight = 530;
+            newDish.sizes.Add(newSize);
+            newSize = new Dish.Sizes();
+            newSize.size = 30;
+            newSize.price = 760;
+            newSize.weight = 560;
+            newDish.sizes.Add(newSize);
+            newSize = new Dish.Sizes();
+            newSize.size = 40;
+            newSize.price = 1210;
+            newSize.weight = 730;
+            newDish.sizes.Add(newSize);
+            dishs.Add(newDish);
+            CreatePizza();
         }
 
         public void CreatePizza()
